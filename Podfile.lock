@@ -1,0 +1,77 @@
+PODS:
+  - Cuckoo (0.12.1)
+  - Nimble (8.0.1)
+  - Quick (2.0.0)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
+  - RxAtomic (4.4.2)
+  - RxCocoa (4.4.2):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
+  - RxSwiftExt (3.4.0):
+    - RxSwiftExt/Core (= 3.4.0)
+    - RxSwiftExt/RxCocoa (= 3.4.0)
+  - RxSwiftExt/Core (3.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwiftExt/RxCocoa (3.4.0):
+    - RxCocoa (~> 4.0)
+    - RxSwiftExt/Core
+  - RxTest (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - SnapKit (4.2.0)
+  - Swinject (2.6.0)
+  - SwinjectAutoregistration (2.5.1):
+    - Swinject (~> 2.5)
+
+DEPENDENCIES:
+  - Cuckoo (= 0.12.1)
+  - Nimble (= 8.0.1)
+  - Quick (= 2.0.0)
+  - RealmSwift (= 3.13.1)
+  - RxCocoa (= 4.4.2)
+  - RxSwift (= 4.4.2)
+  - RxSwiftExt (= 3.4.0)
+  - RxTest (= 4.4.2)
+  - SnapKit (= 4.2.0)
+  - Swinject (= 2.6.0)
+  - SwinjectAutoregistration (= 2.5.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Cuckoo
+    - Nimble
+    - Quick
+    - Realm
+    - RealmSwift
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
+    - RxSwiftExt
+    - RxTest
+    - SnapKit
+    - Swinject
+    - SwinjectAutoregistration
+
+SPEC CHECKSUMS:
+  Cuckoo: 2f10364798baa4b0d4aacabfa475249cf29977bc
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
+  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
+  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
+  RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
+  RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
+  RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
+  RxTest: 6433d5b6229f5de424fa534bc22b5e6c38b0b671
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
+  SwinjectAutoregistration: f72bf894cbd2ee4a9153e00fa5208e93fb44d283
+
+PODFILE CHECKSUM: 5143cd281b9af9e5f8f03ccbb22928fc5fb66da2
+
+COCOAPODS: 1.6.1

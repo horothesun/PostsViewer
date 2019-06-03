@@ -1,0 +1,17 @@
+// Post list screen
+
+"Posts.List.title"="Posts";
+"Posts.List.RefreshButton.title"="Refresh";
+"Posts.List.Cell.Error.fatal"="🛑 Sorry, something went wrong 🛑";
+"Posts.List.Cell.Error.loadingFromScratch"="⚠️ Loading error ⚠️\n\nCheck your connection and try refreshing the list";
+"Posts.List.Cell.reloadingFailed"="⚠️ Loading error ⚠️\n\nYou're looking at old posts";
+
+
+// Post details screen
+
+"Posts.Details.title"="Post details";
+"Posts.Details.Error.dataPlaceholder"="-";
+"Posts.Details.authorNameAndUsername"="%@ - @%@";
+"Posts.Details.Comments.none"="No comments";
+"Posts.Details.Comments.one"="1 comment";
+"Posts.Details.Comments.moreThanOne"="%i comments";

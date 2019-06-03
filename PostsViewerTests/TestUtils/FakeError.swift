@@ -1,0 +1,1 @@
+struct FakeError: Error { }
