@@ -1,45 +1,45 @@
 PODS:
-  - Cuckoo (0.12.1)
-  - Nimble (8.0.1)
-  - Quick (2.0.0)
-  - Realm (3.13.1):
-    - Realm/Headers (= 3.13.1)
-  - Realm/Headers (3.13.1)
-  - RealmSwift (3.13.1):
-    - Realm (= 3.13.1)
-  - RxAtomic (4.4.2)
-  - RxCocoa (4.4.2):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxSwift (4.4.2):
-    - RxAtomic (>= 4.4.2, ~> 4.4)
-  - RxSwiftExt (3.4.0):
-    - RxSwiftExt/Core (= 3.4.0)
-    - RxSwiftExt/RxCocoa (= 3.4.0)
-  - RxSwiftExt/Core (3.4.0):
-    - RxSwift (~> 4.0)
-  - RxSwiftExt/RxCocoa (3.4.0):
-    - RxCocoa (~> 4.0)
+  - Cuckoo (1.1.1)
+  - Nimble (8.0.2)
+  - Quick (2.1.0)
+  - Realm (3.17.3):
+    - Realm/Headers (= 3.17.3)
+  - Realm/Headers (3.17.3)
+  - RealmSwift (3.17.3):
+    - Realm (= 3.17.3)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - RxSwiftExt (5.0.0):
+    - RxSwiftExt/Core (= 5.0.0)
+    - RxSwiftExt/RxCocoa (= 5.0.0)
+  - RxSwiftExt/Core (5.0.0):
+    - RxSwift (~> 5.0)
+  - RxSwiftExt/RxCocoa (5.0.0):
+    - RxCocoa (~> 5.0)
     - RxSwiftExt/Core
-  - RxTest (4.4.2):
-    - RxAtomic (>= 4.4.2, ~> 4.4)
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - SnapKit (4.2.0)
-  - Swinject (2.6.0)
-  - SwinjectAutoregistration (2.5.1):
-    - Swinject (~> 2.5)
+  - RxTest (5.0.0):
+    - RxSwift (~> 5)
+  - SnapKit (5.0.1)
+  - Swinject (2.6.2)
+  - SwinjectAutoregistration (2.6.0):
+    - Swinject (~> 2.6)
 
 DEPENDENCIES:
-  - Cuckoo (= 0.12.1)
-  - Nimble (= 8.0.1)
-  - Quick (= 2.0.0)
-  - RealmSwift (= 3.13.1)
-  - RxCocoa (= 4.4.2)
-  - RxSwift (= 4.4.2)
-  - RxSwiftExt (= 3.4.0)
-  - RxTest (= 4.4.2)
-  - SnapKit (= 4.2.0)
-  - Swinject (= 2.6.0)
-  - SwinjectAutoregistration (= 2.5.1)
+  - Cuckoo (= 1.1.1)
+  - Nimble (= 8.0.2)
+  - Quick (= 2.1.0)
+  - RealmSwift (= 3.17.3)
+  - RxCocoa (= 5.0.0)
+  - RxSwift (= 5.0.0)
+  - RxSwiftExt (= 5.0.0)
+  - RxTest (= 5.0.0)
+  - SnapKit (= 5.0.1)
+  - Swinject (= 2.6.2)
+  - SwinjectAutoregistration (= 2.6.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -48,8 +48,8 @@ SPEC REPOS:
     - Quick
     - Realm
     - RealmSwift
-    - RxAtomic
     - RxCocoa
+    - RxRelay
     - RxSwift
     - RxSwiftExt
     - RxTest
@@ -58,20 +58,20 @@ SPEC REPOS:
     - SwinjectAutoregistration
 
 SPEC CHECKSUMS:
-  Cuckoo: 2f10364798baa4b0d4aacabfa475249cf29977bc
-  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
-  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
-  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
-  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
-  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
-  RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
-  RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
-  RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
-  RxTest: 6433d5b6229f5de424fa534bc22b5e6c38b0b671
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
-  SwinjectAutoregistration: f72bf894cbd2ee4a9153e00fa5208e93fb44d283
+  Cuckoo: 6193c50e46403cc9417aa98752671a2a5ae6f3a6
+  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+  Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
+  RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  RxSwiftExt: 4564187392cc53823ef241fa4a11647861567026
+  RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
+  SwinjectAutoregistration: 93a908f7543c401b0c315305ac0ae501efdbce89
 
-PODFILE CHECKSUM: 5143cd281b9af9e5f8f03ccbb22928fc5fb66da2
+PODFILE CHECKSUM: 2f21c71439672d00157eea5e7344f21800d75b46
 
 COCOAPODS: 1.6.1

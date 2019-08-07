@@ -7,7 +7,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private var resolver: Resolver { return AssemblyCenter.shared.container.resolver }
 
-    private(set) var window: UIWindow?
+    var window: UIWindow?
     private lazy var mainNavigationController = UINavigationController(nibName: nil, bundle: nil)
     private lazy var postsCoordinator: PostsCoordinator = resolver~>
 
