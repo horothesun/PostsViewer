@@ -5,5 +5,5 @@ protocol HttpFetcherRx {
 }
 
 protocol HttpFetcher {
-    func fetch(path: String, completion: @escaping (Result<Data>) -> Void)
+    func fetch(path: String, completion: @escaping (Result<Data, HttpClientError>) -> Void)
 }

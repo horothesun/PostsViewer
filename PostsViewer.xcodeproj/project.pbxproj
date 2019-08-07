@@ -68,7 +68,6 @@
 		B3E0083D223EDA3D009873C5 /* AssemblyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E0083C223EDA3D009873C5 /* AssemblyCenter.swift */; };
 		B3F90E21223EE5A500B10F5B /* PostsCoordinatorDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F90E20223EE5A500B10F5B /* PostsCoordinatorDefault.swift */; };
 		B3F90E23223EE5DA00B10F5B /* PostsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F90E22223EE5DA00B10F5B /* PostsProtocols.swift */; };
-		B3F90E29223F089600B10F5B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F90E28223F089600B10F5B /* Result.swift */; };
 		C1AB609E2647EABB93A491EB /* LocalRepositoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB64B0EFBF6D4AABA9B849 /* LocalRepositoryModels.swift */; };
 		C1AB61D98FEC881119CF923C /* AllDataRemoteRepositoryHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB61A3A6097E6218D5FE28 /* AllDataRemoteRepositoryHttp.swift */; };
 		C1AB620D6AADFD43172130E6 /* SynchronisationRepositoryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB68F28E4D94F53B12E198 /* SynchronisationRepositoryProtocols.swift */; };
@@ -179,7 +178,6 @@
 		B3E0083C223EDA3D009873C5 /* AssemblyCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyCenter.swift; sourceTree = "<group>"; };
 		B3F90E20223EE5A500B10F5B /* PostsCoordinatorDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCoordinatorDefault.swift; sourceTree = "<group>"; };
 		B3F90E22223EE5DA00B10F5B /* PostsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsProtocols.swift; sourceTree = "<group>"; };
-		B3F90E28223F089600B10F5B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		C1AB611A635C5F68612B7F64 /* PostIdStoreDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostIdStoreDefault.swift; sourceTree = "<group>"; };
 		C1AB61A3A6097E6218D5FE28 /* AllDataRemoteRepositoryHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllDataRemoteRepositoryHttp.swift; sourceTree = "<group>"; };
 		C1AB625B0F6D1D690B1E35A3 /* HttpClientAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClientAssembly.swift; sourceTree = "<group>"; };
@@ -504,7 +502,6 @@
 		B3F90E27223F082F00B10F5B /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B3F90E28223F089600B10F5B /* Result.swift */,
 				89D746D63FAF4ED5328654EA /* Single+AsSingleOfResult.swift */,
 				89D747F690DC80402C23D38D /* Driver+Weak.swift */,
 				89D74432C1E530398CD61F49 /* UIImage+Color.swift */,
@@ -843,7 +840,6 @@
 				B32C7E0A223EDEEE00AD6C1F /* PostListProtocols.swift in Sources */,
 				B3F90E21223EE5A500B10F5B /* PostsCoordinatorDefault.swift in Sources */,
 				B32C7DEC223EDC1F00AD6C1F /* AssemblyCompositionOperator.swift in Sources */,
-				B3F90E29223F089600B10F5B /* Result.swift in Sources */,
 				B3E0083D223EDA3D009873C5 /* AssemblyCenter.swift in Sources */,
 				B32C7DEE223EDC1F00AD6C1F /* Assembly+ComposedWith.swift in Sources */,
 				C1AB6BF93616F2D21E023C20 /* HttpClientAssembly.swift in Sources */,
@@ -996,7 +992,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1051,7 +1047,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

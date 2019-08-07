@@ -1,5 +1,5 @@
 enum HttpClientError: Error {
-    case unknown
+    case unknown(Error)
     case invalidPath
     case httpStatus(Int)
 }

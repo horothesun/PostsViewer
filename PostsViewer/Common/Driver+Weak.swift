@@ -10,9 +10,9 @@ extension SharedSequenceConvertibleType where Self.SharingStrategy == RxCocoa.Dr
 
     public func driveNext<A: AnyObject>(
         weak: A,
-        _ onNext: @escaping (A) -> (Self.E) -> Void) -> Disposable {
+        _ onNext: @escaping (A) -> (Self.Element) -> Void) -> Disposable {
 
-        let optionalOnNext: ((A) -> (Self.E) -> Void)? = onNext
+        let optionalOnNext: ((A) -> (Self.Element) -> Void)? = onNext
         return drive(
             weak: weak,
             onNext: optionalOnNext,
@@ -23,7 +23,7 @@ extension SharedSequenceConvertibleType where Self.SharingStrategy == RxCocoa.Dr
 
     public func drive<A: AnyObject>(
         weak: A,
-        onNext: ((A) -> (Self.E) -> Void)?,
+        onNext: ((A) -> (Self.Element) -> Void)?,
         onCompleted: ((A) -> () -> Void)? = nil,
         onDisposed: ((A) -> () -> Void)? = nil) -> Disposable {
 

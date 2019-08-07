@@ -65,7 +65,7 @@ extension LocalRepositoryRefresherDefault: LocalRepositoryRefresher {
     private static func singleStateFromResultAllData(
         with localRepositoryWriter: LocalRepositoryWriterRx,
         _ synchronisationRepository: SynchronisationRepositoryRx)
-        -> (Result<AllData>) -> Single<LocalRepositoryState> {
+        -> (Result<AllData, Error>) -> Single<LocalRepositoryState> {
 
         return { resultAllData in
             switch resultAllData {

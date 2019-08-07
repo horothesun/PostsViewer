@@ -127,7 +127,7 @@ final class PostListViewController: UIViewController {
     }
 
     private static func activityIndicatorBarButton() -> UIBarButtonItem {
-        let activityIndicatorView = UIActivityIndicatorView(style: .gray)
+        let activityIndicatorView = UIActivityIndicatorView(style: .medium)
         activityIndicatorView.startAnimating()
         return UIBarButtonItem(customView: activityIndicatorView)
     }

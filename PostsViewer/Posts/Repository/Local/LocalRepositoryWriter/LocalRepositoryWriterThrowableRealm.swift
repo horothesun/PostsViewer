@@ -20,9 +20,9 @@ extension LocalRepositoryWriterThrowableRealm: LocalRepositoryWriterThrowable {
         let allObjects = localRealmObjectsMapper.allObjects(from: allData)
         let realm = try environment.realm()
         try realm.write {
-            allObjects.posts.map { ($0, false) }.forEach(realm.add(_:update:))
-            allObjects.users.map { ($0, false) }.forEach(realm.add(_:update:))
-            allObjects.comments.map { ($0, false) }.forEach(realm.add(_:update:))
+            allObjects.posts.map { ($0, .error) }.forEach(realm.add(_:update:))
+            allObjects.users.map { ($0, .error) }.forEach(realm.add(_:update:))
+            allObjects.comments.map { ($0, .error) }.forEach(realm.add(_:update:))
         }
     }
 
