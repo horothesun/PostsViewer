@@ -2,8 +2,6 @@ import RxSwift
 
 struct PostListUseCaseDefault {
 
-    private typealias UseCase = PostListUseCaseDefault
-
     private let localRepositoryRefresher: LocalRepositoryRefresher
     private let allPostsLocalRepository: AllPostsLocalRepositoryRx
 
@@ -21,16 +19,16 @@ extension PostListUseCaseDefault: PostListUseCase {
     func refresh() { localRepositoryRefresher.refresh() }
 
     func state(on scheduler: SchedulerType) -> Observable<PostList.UseCaseState> {
-        return localRepositoryRefresher
+        localRepositoryRefresher
             .localRepositoryStateStartingWithReloading(on: scheduler)
-            .flatMap(UseCase.stateFromLocalRepositoryState(with: allPostsLocalRepository))
+            .flatMap(Self.stateFromLocalRepositoryState(with: allPostsLocalRepository))
     }
 
     private static func stateFromLocalRepositoryState(
         with allPostsLocalRepository: AllPostsLocalRepositoryRx)
         -> (LocalRepositoryState) -> Observable<PostList.UseCaseState> {
 
-        return { localRepositoryState in
+        { localRepositoryState in
             switch localRepositoryState {
             case let .loading(isPreviousDataAvailable):
                 return .just(isPreviousDataAvailable ? .reloading : .loadingFromScratch)
@@ -48,7 +46,7 @@ extension PostListUseCaseDefault: PostListUseCase {
         _ isPreviousDataAvailable: Bool,
         with allPostsLocalRepository: AllPostsLocalRepositoryRx) -> Observable<PostList.UseCaseState> {
 
-        return isPreviousDataAvailable
+        isPreviousDataAvailable
             ? allPostsLocalRepository.allPosts
                 .map(PostList.UseCaseState.reloadingFailed(oldPosts:))
                 .asObservable()
@@ -59,7 +57,7 @@ extension PostListUseCaseDefault: PostListUseCase {
         _ isLocalDataAvailable: Bool,
         with allPostsLocalRepository: AllPostsLocalRepositoryRx) -> Observable<PostList.UseCaseState> {
 
-        return isLocalDataAvailable
+        isLocalDataAvailable
             ? allPostsLocalRepository.allPosts
                 .map(PostList.UseCaseState.ready(posts:))
                 .asObservable()

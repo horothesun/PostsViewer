@@ -39,6 +39,6 @@ extension SynchronisationRepositoryThrowableRealm: SynchronisationRepositoryThro
     }
 
     private func getSyncObjects(with realm: () throws -> Realm) throws -> Results<SynchronisationObject> {
-        return try realm().objects(SynchronisationObject.self)
+        try realm().objects(SynchronisationObject.self)
     }
 }

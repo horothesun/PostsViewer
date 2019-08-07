@@ -5,7 +5,7 @@ public protocol Reusable: class {
 }
 
 extension Reusable {
-    public static var reuseIdentifier: String { return "\(Self.self)" }
+    public static var reuseIdentifier: String { "\(Self.self)" }
 }
 
 extension UITableView {
@@ -15,7 +15,7 @@ extension UITableView {
     }
 
     public func dequeueReusableCell<T: UITableViewCell & Reusable>(indexPath: IndexPath) -> T {
-        return dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as! T
+        dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as! T
     }
 
     public func registerReusableHeaderFooterView<T: UITableViewHeaderFooterView & Reusable>(_ type: T.Type) {
@@ -23,6 +23,6 @@ extension UITableView {
     }
 
     public func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView & Reusable>() -> T {
-        return dequeueReusableHeaderFooterView(withIdentifier: T.reuseIdentifier) as! T
+        dequeueReusableHeaderFooterView(withIdentifier: T.reuseIdentifier) as! T
     }
 }

@@ -13,7 +13,7 @@ struct UserForPostIdLocalRepositoryRxAdapter {
 extension UserForPostIdLocalRepositoryRxAdapter: UserForPostIdLocalRepositoryRx {
 
     func userFor(postId: Post.Id) -> Single<User> {
-        return .deferred { [baseRepository] in
+        .deferred { [baseRepository] in
             .just(try baseRepository.userFor(postId: postId))
         }
     }

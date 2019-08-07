@@ -1,5 +1,5 @@
 import RealmSwift
 
 extension UserObject {
-    func asUser() -> User { return .init(id: id, name: name, username: username) }
+    func asUser() -> User { .init(id: id, name: name, username: username) }
 }

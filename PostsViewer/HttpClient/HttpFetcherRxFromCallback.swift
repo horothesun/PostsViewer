@@ -10,7 +10,7 @@ final class HttpFetcherRxFromCallback {
 extension HttpFetcherRxFromCallback: HttpFetcherRx {
 
     func fetch(path: String) -> Single<Data> {
-        return Single<Data>.create { [baseFetcher] observer -> Disposable in
+        Single<Data>.create { [baseFetcher] observer -> Disposable in
             baseFetcher.fetch(path: path) { resultData in
                 switch resultData {
                 case let .success(data):  observer(.success(data))

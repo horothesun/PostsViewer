@@ -12,6 +12,6 @@ struct PostForIdLocalRepositoryRxAdapter {
 extension PostForIdLocalRepositoryRxAdapter: PostForIdLocalRepositoryRx {
 
     func postFor(id: Post.Id) -> Single<Post> {
-        return .deferred { [baseRepository] in .just(try baseRepository.postFor(id: id)) }
+        .deferred { [baseRepository] in .just(try baseRepository.postFor(id: id)) }
     }
 }

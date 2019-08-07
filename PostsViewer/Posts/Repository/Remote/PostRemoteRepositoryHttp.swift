@@ -13,7 +13,7 @@ struct PostRemoteRepositoryHttp {
 
 extension PostRemoteRepositoryHttp: PostRemoteRepository {
 
-    private var path: String { return environment.baseUrl + "posts" }
+    private var path: String { environment.baseUrl + "posts" }
 
     var allPostData: Single<[PostData]> {
         return httpFetcher.fetch(path: path)

@@ -12,6 +12,6 @@ struct AllPostsLocalRepositoryRxAdapter {
 extension AllPostsLocalRepositoryRxAdapter: AllPostsLocalRepositoryRx {
 
     var allPosts: Single<[Post]> {
-        return .deferred { [baseRepository] in .just(try baseRepository.allPosts()) }
+        .deferred { [baseRepository] in .just(try baseRepository.allPosts()) }
     }
 }

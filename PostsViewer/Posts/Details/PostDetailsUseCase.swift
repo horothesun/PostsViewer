@@ -20,7 +20,7 @@ struct PostDetailsUseCaseDefault {
 extension PostDetailsUseCaseDefault: PostDetailsUseCase {
 
     func responseFor(postId: Post.Id) -> Single<PostDetails.UseCaseResponse> {
-        return Observable<(Post, User, Int)>
+        Observable<(Post, User, Int)>
             .combineLatest(
                 postForIdLocalRepository
                     .postFor(id: postId)

@@ -3,8 +3,6 @@ import RxCocoa
 
 final class PostDetailsViewModelDefault {
 
-    private typealias ViewModel = PostDetailsViewModelDefault
-
     private let displayModelSubject = PublishSubject<PostDetails.DisplayModel>()
     private let disposeBag = DisposeBag()
 
@@ -34,32 +32,32 @@ extension PostDetailsViewModelDefault: PostDetailsViewModel {
     }
 
     var postTitle: Driver<String> {
-        return displayModelSubject
+        displayModelSubject
             .map { $0.postTitle }
-            .asDriver(onErrorJustReturn: ViewModel.errorPlaceholder)
+            .asDriver(onErrorJustReturn: Self.errorPlaceholder)
     }
 
     var postDescription: Driver<String> {
-        return displayModelSubject
+        displayModelSubject
             .map { $0.postDescription }
-            .asDriver(onErrorJustReturn: ViewModel.errorPlaceholder)
+            .asDriver(onErrorJustReturn: Self.errorPlaceholder)
     }
 
     var author: Driver<String> {
-        return displayModelSubject
+        displayModelSubject
             .map { $0.author }
-            .asDriver(onErrorJustReturn: ViewModel.errorPlaceholder)
+            .asDriver(onErrorJustReturn: Self.errorPlaceholder)
     }
 
     var numberOfComments: Driver<String> {
-        return displayModelSubject
+        displayModelSubject
             .map { $0.numberOfComments }
-            .asDriver(onErrorJustReturn: ViewModel.errorPlaceholder)
+            .asDriver(onErrorJustReturn: Self.errorPlaceholder)
     }
 
     func onDidBindToAllDrivers() {
         useCase.responseFor(postId: postIdStore.postId)
-            .map(ViewModel.displayModelFrom(response:))
+            .map(Self.displayModelFrom(response:))
             .subscribeOn(scheduler)
             .asObservable()
             .bind(to: displayModelSubject)
@@ -69,7 +67,7 @@ extension PostDetailsViewModelDefault: PostDetailsViewModel {
     private static func displayModelFrom(
         response: PostDetails.UseCaseResponse) -> PostDetails.DisplayModel {
 
-        return .init(
+        .init(
             postTitle: response.postTitle,
             postDescription: response.postDescription,
             author: authorTextFrom(name: response.authorName, username: response.authorUsername),
@@ -109,7 +107,7 @@ extension PostDetailsViewModelDefault: PostDetailsViewModel {
     }
 
     private static var errorPlaceholder: String {
-        return NSLocalizedString(
+        NSLocalizedString(
             "Posts.Details.Error.dataPlaceholder",
             comment: "Error data placeholder"
         )

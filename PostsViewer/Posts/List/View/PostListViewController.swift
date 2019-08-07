@@ -139,9 +139,9 @@ final class PostListViewController: UIViewController {
 
 extension PostListViewController: PostListView {
 
-    var refreshTap: Observable<Void> { return refreshBarButton.rx.tap.asObservable() }
+    var refreshTap: Observable<Void> { refreshBarButton.rx.tap.asObservable() }
 
     var cellDisplayModelTap: Observable<PostList.CellDisplayModel> {
-        return tableView.rx.modelSelected(PostList.CellDisplayModel.self).asObservable()
+        tableView.rx.modelSelected(PostList.CellDisplayModel.self).asObservable()
     }
 }

@@ -13,7 +13,7 @@ struct CommentRemoteRepositoryHttp {
 
 extension CommentRemoteRepositoryHttp: CommentRemoteRepository {
 
-    private var path: String { return environment.baseUrl + "comments" }
+    private var path: String { environment.baseUrl + "comments" }
 
     var allCommentData: Single<[CommentData]> {
         return httpFetcher.fetch(path: path)

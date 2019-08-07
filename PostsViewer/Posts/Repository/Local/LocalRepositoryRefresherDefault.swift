@@ -4,8 +4,6 @@ import RealmSwift
 
 final class LocalRepositoryRefresherDefault {
 
-    private typealias Refresher = LocalRepositoryRefresherDefault
-
     private let refreshSubject = PublishSubject<Void>()
 
     private let allDataRemoteRepository: AllDataRemoteRepository
@@ -31,7 +29,7 @@ extension LocalRepositoryRefresherDefault: LocalRepositoryRefresher {
         on scheduler: SchedulerType) -> Observable<LocalRepositoryState> {
 
         let getRemoteDataAndStoreItLocallyStates
-            = Refresher.getRemoteDataAndStoreItLocally(with:
+            = Self.getRemoteDataAndStoreItLocally(with:
                 allDataRemoteRepository,
                 localRepositoryWriter,
                 synchronisationRepository
@@ -55,7 +53,7 @@ extension LocalRepositoryRefresherDefault: LocalRepositoryRefresher {
         let remainingStates = allDataRemoteRepository.allData
             .asSingleOfResult()
             .asObservable()
-            .flatMap(Refresher.singleStateFromResultAllData(
+            .flatMap(Self.singleStateFromResultAllData(
                 with: localRepositoryWriter, synchronisationRepository
             ))
         return initialLoadingState.asObservable()
@@ -67,10 +65,10 @@ extension LocalRepositoryRefresherDefault: LocalRepositoryRefresher {
         _ synchronisationRepository: SynchronisationRepositoryRx)
         -> (Result<AllData, Error>) -> Single<LocalRepositoryState> {
 
-        return { resultAllData in
+        { resultAllData in
             switch resultAllData {
             case let .success(allData):
-                return Refresher.singleState(
+                return Self.singleState(
                     from: allData,
                     with: localRepositoryWriter, synchronisationRepository
                 )
@@ -87,7 +85,7 @@ extension LocalRepositoryRefresherDefault: LocalRepositoryRefresher {
         _ synchronisationRepository: SynchronisationRepositoryRx)
         -> Single<LocalRepositoryState> {
 
-        return localRepositoryWriter.cleanAllData()
+        localRepositoryWriter.cleanAllData()
             .andThen(localRepositoryWriter.write(allData: allData))
             .andThen(synchronisationRepository.set(isLocalDataAvailable: true))
             .andThen(Single<LocalRepositoryState>.just(.ready(isLocalDataAvailable: true)))

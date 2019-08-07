@@ -4,8 +4,6 @@ import RxCocoa
 
 final class PostListViewModelDefault {
 
-    private typealias ViewModel = PostListViewModelDefault
-
     private let stateSubject = PublishSubject<PostList.UseCaseState>()
     private let disposeBag = DisposeBag()
 
@@ -45,30 +43,30 @@ extension PostListViewModelDefault: PostListViewModel {
     }
 
     var cellDisplayModels: Driver<[PostList.CellDisplayModel]> {
-        return stateSubject
-            .apply(ViewModel.cellDisplayModelsFromState(with: cellDisplayModelBuilder))
+        stateSubject
+            .apply(Self.cellDisplayModelsFromState(with: cellDisplayModelBuilder))
             .startWith([])
             .asDriver(onErrorJustReturn: cellDisplayModelBuilder.fatalErrorCellDisplayModels)
     }
 
     var isRefreshButtonEnabled: Driver<Bool> {
-        return stateSubject
-            .apply(ViewModel.isLoadingFromState)
+        stateSubject
+            .apply(Self.isLoadingFromState)
             .map { !$0 }
             .startWith(false)
             .asDriver(onErrorJustReturn: false)
     }
 
     var isActivityIndicatorVisible: Driver<Bool> {
-        return stateSubject
-            .apply(ViewModel.isLoadingFromState)
+        stateSubject
+            .apply(Self.isLoadingFromState)
             .startWith(false)
             .asDriver(onErrorJustReturn: false)
     }
 
     var doesTableViewAllowSelection: Driver<Bool> {
-        return stateSubject
-            .apply(ViewModel.isLoadingFromState)
+        stateSubject
+            .apply(Self.isLoadingFromState)
             .map { !$0 }
             .startWith(false)
             .asDriver(onErrorJustReturn: false)
@@ -80,9 +78,9 @@ extension PostListViewModelDefault: PostListViewModel {
             .disposed(by: disposeBag)
 
         view.cellDisplayModelTap
-            .apply(ViewModel.keepPostCellDisplayModelTapOnly)
+            .apply(Self.keepPostCellDisplayModelTapOnly)
             .map { $0.id }
-            .subscribe(weak: self, onNext: ViewModel.proceedToPostDetails(postId:))
+            .subscribe(weak: self, onNext: PostListViewModelDefault.proceedToPostDetails(postId:))
             .disposed(by: disposeBag)
 
         useCase.state(on: scheduler)
@@ -94,7 +92,7 @@ extension PostListViewModelDefault: PostListViewModel {
         with cellDisplayModelBuilder: PostListCellDisplayModelBuilder)
         -> (Observable<PostList.UseCaseState>) -> Observable<[PostList.CellDisplayModel]> {
 
-        return { upstream in
+        { upstream in
             upstream.filterMap { state -> FilterMap<[PostList.CellDisplayModel]> in
                 switch state {
                 case .loadingFromScratch,
@@ -115,7 +113,7 @@ extension PostListViewModelDefault: PostListViewModel {
 
     private static var isLoadingFromState: (Observable<PostList.UseCaseState>) -> Observable<Bool> {
 
-        return { upstream in
+        { upstream in
             upstream.map { state -> Bool in
                 switch state {
                 case .loadingFromScratch,
@@ -135,7 +133,7 @@ extension PostListViewModelDefault: PostListViewModel {
     private static var keepPostCellDisplayModelTapOnly:
         (Observable<PostList.CellDisplayModel>) -> Observable<PostList.CellDisplayModel.Post> {
 
-        return { upstream in
+        { upstream in
             upstream.filterMap { cellDisplayModel -> FilterMap<PostList.CellDisplayModel.Post> in
                 switch cellDisplayModel {
                 case .noData:                         return .ignore

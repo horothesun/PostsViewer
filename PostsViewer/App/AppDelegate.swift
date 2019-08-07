@@ -5,7 +5,7 @@ import SwinjectAutoregistration
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    private var resolver: Resolver { return AssemblyCenter.shared.container.resolver }
+    private var resolver: Resolver { AssemblyCenter.shared.container.resolver }
 
     var window: UIWindow?
     private lazy var mainNavigationController = UINavigationController(nibName: nil, bundle: nil)

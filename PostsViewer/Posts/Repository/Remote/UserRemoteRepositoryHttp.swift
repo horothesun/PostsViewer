@@ -13,7 +13,7 @@ struct UserRemoteRepositoryHttp {
 
 extension UserRemoteRepositoryHttp: UserRemoteRepository {
 
-    private var path: String { return environment.baseUrl + "users" }
+    private var path: String { environment.baseUrl + "users" }
 
     var allUserData: Single<[UserData]> {
         return httpFetcher.fetch(path: path)

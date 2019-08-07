@@ -1,5 +1,5 @@
 import RealmSwift
 
 extension PostObject {
-    func asPost() -> Post { return .init(id: id, title: title, body: body) }
+    func asPost() -> Post { .init(id: id, title: title, body: body) }
 }

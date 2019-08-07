@@ -5,8 +5,6 @@ import RxCocoa
 
 final class PostDetailsViewController: UIViewController {
 
-    private typealias View = PostDetailsViewController
-
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)
         scrollView.alwaysBounceVertical = false

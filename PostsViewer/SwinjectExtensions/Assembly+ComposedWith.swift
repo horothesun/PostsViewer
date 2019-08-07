@@ -2,7 +2,7 @@ import Swinject
 
 extension Assembly {
     public func composed(with assembly: Assembly) -> Assembly {
-        return ComposedAssembly(self, assembly)
+        ComposedAssembly(self, assembly)
     }
 }
 

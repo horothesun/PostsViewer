@@ -27,7 +27,7 @@ struct PostListCellDisplayModelBuilderDefault: PostListCellDisplayModelBuilder {
     }
 
     func cellDisplayModels(from posts: [Post]) -> [PostList.CellDisplayModel] {
-        return posts
+        posts
             .map { ($0.id, $0.title) }
             .map(PostList.CellDisplayModel.Post.init(id:title:))
             .map(PostList.CellDisplayModel.post(cellDisplayModel:))

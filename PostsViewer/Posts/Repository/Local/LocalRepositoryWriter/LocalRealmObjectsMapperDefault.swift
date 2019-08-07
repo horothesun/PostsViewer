@@ -2,13 +2,11 @@ import RealmSwift
 
 struct LocalRealmObjectsMapperDefault: LocalRealmObjectsMapper {
 
-    private typealias Mapper = LocalRealmObjectsMapperDefault
-
     func allObjects(from allData: AllData) -> AllObjects {
-        return .init(
-            posts: allData.posts.map(Mapper.postObjectFrom(postData:)),
-            users: allData.users.map(Mapper.userObjectFrom(userData:)),
-            comments: allData.comments.map(Mapper.commentObjectFrom(commentData:))
+        .init(
+            posts: allData.posts.map(Self.postObjectFrom(postData:)),
+            users: allData.users.map(Self.userObjectFrom(userData:)),
+            comments: allData.comments.map(Self.commentObjectFrom(commentData:))
         )
     }
 

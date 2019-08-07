@@ -10,7 +10,7 @@ struct NumberOfCommentsForPostIdLocalRepositoryThrowableRealm {
 extension NumberOfCommentsForPostIdLocalRepositoryThrowableRealm: NumberOfCommentsForPostIdLocalRepositoryThrowable {
 
     func numberOfCommentsFor(postId: Post.Id) throws -> Int {
-        return try environment.realm().objects(CommentObject.self)
+        try environment.realm().objects(CommentObject.self)
             .filter { $0.postId == postId }
             .count
     }

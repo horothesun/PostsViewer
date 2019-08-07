@@ -20,7 +20,7 @@ struct AllDataRemoteRepositoryHttp {
 extension AllDataRemoteRepositoryHttp: AllDataRemoteRepository {
 
     var allData: Single<AllData> {
-        return Observable.combineLatest(
+        Observable.combineLatest(
             postRemoteRepository.allPostData.asObservable(),
             userRemoteRepository.allUserData.asObservable(),
             commentRemoteRepository.allCommentData.asObservable(),

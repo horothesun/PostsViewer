@@ -4,7 +4,7 @@ import RxTest
 
 public func beNextEvent<T>(satisfying: @escaping (T) -> Bool) -> Predicate<Event<T>> {
 
-    return Predicate { expression in
+    Predicate { expression in
         guard let event = try expression.evaluate() else {
             return .init(
                 status: .fail,
@@ -35,7 +35,7 @@ public func beNextEvent<T>(
     at time: TestTime,
     satisfying: @escaping (T) -> Bool) -> Predicate<Recorded<Event<T>>> {
 
-    return Predicate { expression in
+    Predicate { expression in
         guard let recordedEvent = try expression.evaluate() else {
             return .init(
                 status: .fail,
@@ -66,7 +66,7 @@ public func beNextEvent<T>(
 
 public func beNextEvent<T>(test: @escaping (T) -> Void) -> Predicate<Event<T>> {
 
-    return Predicate { expression in
+    Predicate { expression in
         guard let event = try expression.evaluate() else {
             return .init(
                 status: .fail,
@@ -96,7 +96,7 @@ public func beNextEvent<T>(
     at time: TestTime,
     test: @escaping (T) -> Void) -> Predicate<Recorded<Event<T>>> {
 
-    return Predicate { expression in
+    Predicate { expression in
         guard let recordedEvent = try expression.evaluate() else {
             return .init(
                 status: .fail,
@@ -126,7 +126,7 @@ public func beNextEvent<T>(
 
 public func beErrorEvent<T>() -> Predicate<Event<T>> {
 
-    return Predicate { expression in
+    Predicate { expression in
         guard let event = try expression.evaluate() else {
             return .init(
                 status: .fail,
@@ -151,7 +151,7 @@ public func beErrorEvent<T>() -> Predicate<Event<T>> {
 
 public func beErrorEvent<T>(at time: TestTime) -> Predicate<Recorded<Event<T>>> {
 
-    return Predicate { expression in
+    Predicate { expression in
         guard let recordedEvent = try expression.evaluate() else {
             return .init(
                 status: .fail,
@@ -180,7 +180,7 @@ public func beErrorEvent<T>(at time: TestTime) -> Predicate<Recorded<Event<T>>> 
 
 public func beCompletedEvent<T>() -> Predicate<Event<T>> {
 
-    return Predicate { expression in
+    Predicate { expression in
         guard let event = try expression.evaluate() else {
             return .init(
                 status: .fail,
@@ -205,7 +205,7 @@ public func beCompletedEvent<T>() -> Predicate<Event<T>> {
 
 public func beCompletedEvent<T>(at time: TestTime) -> Predicate<Recorded<Event<T>>> {
 
-    return Predicate { expression in
+    Predicate { expression in
         guard let recordedEvent = try expression.evaluate() else {
             return .init(
                 status: .fail,

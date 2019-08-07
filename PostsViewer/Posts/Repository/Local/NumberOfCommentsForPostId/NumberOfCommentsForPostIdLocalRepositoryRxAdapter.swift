@@ -12,7 +12,7 @@ struct NumberOfCommentsForPostIdLocalRepositoryRxAdapter {
 extension NumberOfCommentsForPostIdLocalRepositoryRxAdapter: NumberOfCommentsForPostIdLocalRepositoryRx {
 
     func numberOfCommentsFor(postId: Post.Id) -> Single<Int> {
-        return .deferred { [baseRepository] in
+        .deferred { [baseRepository] in
             .just(try baseRepository.numberOfCommentsFor(postId: postId))
         }
     }
